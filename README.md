@@ -31,7 +31,7 @@ hugo                 # outputs the finished site into ./public
 
 Upload the **contents of `public/`** to any static host:
 
-- **GitHub Pages** — push the repo, enable Pages (or use the `peaceiris/actions-hugo` workflow). Free, redeploys on every push.
+- **GitHub Pages** — a workflow is already set up at `.github/workflows/hugo.yml`. Push this repo to GitHub, then in the repo's **Settings → Pages**, set **Source** to "GitHub Actions". Every push to `main` rebuilds and redeploys automatically — no manual `public/` upload needed. It builds with `baseURL` set automatically to match wherever Pages serves the site (works for both `user.github.io` and `user.github.io/repo-name`).
 - **University web space** (Gipsa-lab / LISTIC personal or project pages) — SFTP the `public/` files.
 - **Netlify / Cloudflare Pages / GitLab Pages** — point them at the repo, build command `hugo`, publish dir `public`.
 
