@@ -1,0 +1,90 @@
+# ---- Work-package detail pages (edit prose here) ----
+wp1:
+  next_en: "WP 2 \u00b7 Geometric ML models \u2192"
+  next_fr: "WP 2 \u00b7 Mod\u00e8les d'apprentissage g\u00e9om\u00e9triques \u2192"
+  next_url: "workpackages/wp2/"
+  eqn: "\u03c6 = arg det(X\u2020Y)"
+  sections:
+    - heading_en: Motivation
+      heading_fr: Motivation
+      type: para
+      body_en:
+        - "InSAR and PolInSAR track ground displacement \u2014 glacier melt, landslides, volcanic deformation \u2014 by following the phase of interfering SAR images over time. Recent studies revealed a puzzling phase inconsistency: phases averaged over three coherent images can deviate significantly from triangularity, biasing displacement estimates. This phenomenon has never been studied in the richer multivariate PolInSAR setting."
+        - "Our hypothesis: properly characterized through the concept of <em>geometric phase</em> \u2014 introduced by Berry for quantum systems, recently extended to bivariate signals \u2014 these inconsistencies stop being a nuisance and become a discriminative feature of the nature of ground displacement."
+      body_fr:
+        - "L'InSAR et le PolInSAR suivent les d\u00e9placements du sol \u2014 fonte des glaciers, glissements de terrain, d\u00e9formations volcaniques \u2014 en suivant dans le temps la phase d'interf\u00e9rence des images SAR. Des \u00e9tudes r\u00e9centes ont r\u00e9v\u00e9l\u00e9 une incoh\u00e9rence de phase surprenante : les phases moyenn\u00e9es sur trois images coh\u00e9rentes peuvent s'\u00e9carter sensiblement de la triangularit\u00e9, biaisant l'estimation des d\u00e9placements. Ce ph\u00e9nom\u00e8ne n'a jamais \u00e9t\u00e9 \u00e9tudi\u00e9 dans le cadre multivari\u00e9, plus riche, du PolInSAR."
+        - "Notre hypoth\u00e8se : correctement caract\u00e9ris\u00e9es par le concept de <em>phase g\u00e9om\u00e9trique</em> \u2014 introduit par Berry pour les syst\u00e8mes quantiques, r\u00e9cemment \u00e9tendu aux signaux bivari\u00e9s \u2014 ces incoh\u00e9rences cessent d'\u00eatre une nuisance et deviennent un descripteur discriminant de la nature du d\u00e9placement."
+    - heading_en: Research directions
+      heading_fr: Pistes de recherche
+      type: list
+      items:
+        - en: "<strong>Geometric phases as features.</strong> The phase accumulated by a multivariate signal along its trajectory in complex projective space is gauge-invariant and reparametrization-invariant \u2014 exactly the invariances needed for robust classification across acquisition configurations and temporal baselines."
+          fr: "<strong>Les phases g\u00e9om\u00e9triques comme descripteurs.</strong> La phase accumul\u00e9e par un signal multivari\u00e9 le long de sa trajectoire dans l'espace projectif complexe est invariante de jauge et de reparam\u00e9trisation \u2014 exactement les invariances requises pour une classification robuste aux configurations d'acquisition et aux bases temporelles."
+        - en: "<strong>A hierarchy of non-commutative phases.</strong> Higher-dimensional phases living on Stiefel manifolds, computed in nested subspaces, yield a multi-scale set of k+1 features \u2014 in the spirit of the signature method, at a fraction of its computational cost."
+          fr: "<strong>Une hi\u00e9rarchie de phases non commutatives.</strong> Des phases de dimension sup\u00e9rieure, vivant sur des vari\u00e9t\u00e9s de Stiefel et calcul\u00e9es dans des sous-espaces embo\u00eet\u00e9s, fournissent un jeu multi-\u00e9chelle de k+1 descripteurs \u2014 dans l'esprit de la m\u00e9thode des signatures, pour une fraction de son co\u00fbt de calcul."
+        - en: "<strong>Metrics and barycenters.</strong> Defining low-complexity metrics on this new feature space, with adapted versions of classical ML algorithms (k-means and beyond) operating intrinsically on it."
+          fr: "<strong>M\u00e9triques et barycentres.</strong> D\u00e9finir des m\u00e9triques de faible complexit\u00e9 sur ce nouvel espace de descripteurs, avec des versions adapt\u00e9es d'algorithmes classiques (k-means et au-del\u00e0) op\u00e9rant intrins\u00e8quement sur cet espace."
+    - heading_en: "Applications &amp; data"
+      heading_fr: "Applications et donn\u00e9es"
+      type: para
+      body_en:
+        - "Classification of displacement types \u2014 glacial flow, volcanic deformation, urban subsidence, vegetation dynamics \u2014 on InSAR and PolInSAR image sequences, including datasets over Mexico City and several volcanoes available through existing collaborations."
+      body_fr:
+        - "Classification des types de d\u00e9placement \u2014 \u00e9coulement glaciaire, d\u00e9formation volcanique, subsidence urbaine, dynamique de la v\u00e9g\u00e9tation \u2014 sur des s\u00e9quences InSAR et PolInSAR, dont des jeux de donn\u00e9es sur Mexico et plusieurs volcans disponibles via des collaborations existantes."
+wp2:
+  prev_en: "\u2190 WP 1 \u00b7 Geometric invariant features"
+  prev_fr: "\u2190 WP 1 \u00b7 Descripteurs g\u00e9om\u00e9triques invariants"
+  prev_url: "workpackages/wp1/"
+  next_en: "WP 3 \u00b7 Flow matching on manifolds \u2192"
+  next_fr: "WP 3 \u00b7 Flow matching sur les vari\u00e9t\u00e9s \u2192"
+  next_url: "workpackages/wp3/"
+  eqn: "Attn(Q, K, V) on SPD(p)"
+  sections:
+    - heading_en: Motivation
+      heading_fr: Motivation
+      type: para
+      body_en:
+        - "SPDNet made it possible to build neural networks directly on covariance matrices, and has proven remarkably robust on small, highly variable datasets. But its architecture predates the transformer era: it handles neither the temporal dimension nor the multimodality of modern remote-sensing data. This WP develops two successors."
+      body_fr:
+        - "SPDNet a permis de construire des r\u00e9seaux de neurones directement sur les matrices de covariance, avec une robustesse remarquable sur des jeux de donn\u00e9es petits et tr\u00e8s variables. Mais son architecture pr\u00e9c\u00e8de l'\u00e8re des transformers : elle ne g\u00e8re ni la dimension temporelle ni la multimodalit\u00e9 des donn\u00e9es modernes de t\u00e9l\u00e9d\u00e9tection. Cet axe d\u00e9veloppe deux successeurs."
+    - heading_en: Transformer SPDNet
+      heading_fr: Transformer SPDNet
+      type: para
+      body_en:
+        - "A transformer whose every ingredient is rebuilt for sequences of SPD matrices: positional encoding inspired by the Siegel group; attention scores based on the Riemannian metric and Riemannian angles (or Fisher vectors) rather than log-Euclidean distances; output sequences computed with better-behaved centers such as the symmetrized Kullback\u2013Leibler barycenter; normalizations based on determinant or trace. Random matrix theory will help tame high-dimensional covariance matrices."
+        - "<span style=\"color:var(--muted)\">Evaluation: semantic classification on temporal remote-sensing datasets, and change detection on UAVSAR.</span>"
+      body_fr:
+        - "Un transformer dont chaque ingr\u00e9dient est reconstruit pour des s\u00e9quences de matrices SPD : encodage positionnel inspir\u00e9 du groupe de Siegel ; scores d'attention fond\u00e9s sur la m\u00e9trique riemannienne et les angles riemanniens (ou les vecteurs de Fisher) plut\u00f4t que sur des distances log-euclidiennes ; s\u00e9quences de sortie calcul\u00e9es avec des centres mieux adapt\u00e9s comme le barycentre de Kullback\u2013Leibler sym\u00e9tris\u00e9 ; normalisations par d\u00e9terminant ou trace. La th\u00e9orie des matrices al\u00e9atoires aidera \u00e0 ma\u00eetriser la grande dimension."
+        - "<span style=\"color:var(--muted)\">\u00c9valuation : classification s\u00e9mantique sur des jeux de donn\u00e9es temporels de t\u00e9l\u00e9d\u00e9tection, et d\u00e9tection de changement sur UAVSAR.</span>"
+    - heading_en: Federated SPDNet
+      heading_fr: Federated SPDNet
+      type: para
+      body_en:
+        - "Rather than fusing all modalities on one server, models are trained on separate clients that only exchange coefficients \u2014 a natural fit for lightweight geometric models. The key ingredient is computing barycenters of SPDNet coefficients on the Stiefel manifold, directly and cheaply, on the central server. A second line extends the pipeline to heterogeneous modalities \u2014 covariance matrices of different sizes and meanings (spectro-angular in SAR, spectral in multi/hyperspectral) \u2014 via compact smooth manifolds and data imputation."
+        - "<span style=\"color:var(--muted)\">Evaluation: real multimodal remote-sensing datasets.</span>"
+      body_fr:
+        - "Plut\u00f4t que de fusionner toutes les modalit\u00e9s sur un seul serveur, les mod\u00e8les sont entra\u00een\u00e9s sur des clients s\u00e9par\u00e9s qui n'\u00e9changent que leurs coefficients \u2014 un cadre naturel pour des mod\u00e8les g\u00e9om\u00e9triques l\u00e9gers. L'ingr\u00e9dient cl\u00e9 est le calcul direct et peu co\u00fbteux, sur le serveur central, de barycentres des coefficients de SPDNet sur la vari\u00e9t\u00e9 de Stiefel. Une seconde piste \u00e9tend le pipeline aux modalit\u00e9s h\u00e9t\u00e9rog\u00e8nes \u2014 matrices de covariance de tailles et de significations diff\u00e9rentes (spectro-angulaire en SAR, spectrale en multi/hyperspectral) \u2014 via les vari\u00e9t\u00e9s lisses compactes et l'imputation de donn\u00e9es."
+        - "<span style=\"color:var(--muted)\">\u00c9valuation : jeux de donn\u00e9es multimodaux r\u00e9els de t\u00e9l\u00e9d\u00e9tection.</span>"
+wp3:
+  prev_en: "\u2190 WP 2 \u00b7 Geometric ML models"
+  prev_fr: "\u2190 WP 2 \u00b7 Mod\u00e8les d'apprentissage g\u00e9om\u00e9triques"
+  prev_url: "workpackages/wp2/"
+  eqn: "\u1e8b = v\u03b8(x, t),  x \u2208 \u2133"
+  sections:
+    - heading_en: Motivation
+      heading_fr: Motivation
+      type: para
+      body_en:
+        - "Generative models \u2014 diffusion, flow matching \u2014 rarely account for the constraints the data must satisfy. Yet recent results show the value of building flows directly on the manifold where the data live. This WP develops flow-matching models for the manifolds at the heart of GEOMETRY \u2014 torus, SPD matrices, Stiefel and Grassmann \u2014 using lightweight geometric tools so the models stay usable in practice."
+      body_fr:
+        - "Les mod\u00e8les g\u00e9n\u00e9ratifs \u2014 diffusion, flow matching \u2014 tiennent rarement compte des contraintes que les donn\u00e9es doivent satisfaire. Or des r\u00e9sultats r\u00e9cents montrent l'int\u00e9r\u00eat de construire les flots directement sur la vari\u00e9t\u00e9 o\u00f9 vivent les donn\u00e9es. Cet axe d\u00e9veloppe des mod\u00e8les de flow matching pour les vari\u00e9t\u00e9s au c\u0153ur de GEOMETRY \u2014 tore, matrices SPD, Stiefel et Grassmann \u2014 avec des outils g\u00e9om\u00e9triques l\u00e9gers pour rester utilisables en pratique."
+    - heading_en: Three applications
+      heading_fr: Trois applications
+      type: list
+      items:
+        - en: "<strong>Realistic data generation.</strong> Learning the flow between noise and real images \u2014 InSAR, SAR from SPD matrices, multispectral from projectors \u2014 to produce test data for the algorithms of WP1 and WP2."
+          fr: "<strong>G\u00e9n\u00e9ration de donn\u00e9es r\u00e9alistes.</strong> Apprendre le flot entre le bruit et des images r\u00e9elles \u2014 InSAR, SAR \u00e0 partir de matrices SPD, multispectral \u00e0 partir de projecteurs \u2014 pour produire des donn\u00e9es de test pour les algorithmes des WP1 et WP2."
+        - en: "<strong>Denoising.</strong> Learning the flow between noisy and clean images, for InSAR (very noisy at long temporal baselines) and SAR speckle. Validation: denoise Sentinel-1 series and compare against TerraSAR-X acquisitions of the same volcanoes, available through the collaboration with ONERA."
+          fr: "<strong>D\u00e9bruitage.</strong> Apprendre le flot entre image bruit\u00e9e et image propre, pour l'InSAR (tr\u00e8s bruit\u00e9 aux longues bases temporelles) et le speckle SAR. Validation : d\u00e9bruiter des s\u00e9ries Sentinel-1 et comparer aux acquisitions TerraSAR-X des m\u00eames volcans, disponibles via la collaboration avec l'ONERA."
+        - en: "<strong>Interpolation \u2014 and prediction.</strong> Revisit intervals of 6 to 12 days are often too coarse. Learning the flow between two successive dates could create an image in between \u2014 and, if convincing, predict the next one: valuable for monitoring sites at risk."
+          fr: "<strong>Interpolation \u2014 et pr\u00e9diction.</strong> Des intervalles de revisite de 6 \u00e0 12 jours sont souvent trop grossiers. Apprendre le flot entre deux dates successives pourrait cr\u00e9er une image interm\u00e9diaire \u2014 et, si les r\u00e9sultats sont convaincants, pr\u00e9dire la suivante : pr\u00e9cieux pour la surveillance des sites \u00e0 risque."

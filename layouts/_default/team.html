@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $chairs := where .Pages "Params.group" "chair" }}
+{{ $members := where .Pages "Params.group" "member" }}
+<section style="max-width:1160px; margin:0 auto; padding:72px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:14px">{{ partial "bi.html" (dict "en" "The people" "fr" "Les personnes") }}</div>
+  <h1 style="font-family:var(--font-display); font-weight:500; font-size:clamp(30px,3.6vw,44px); margin:0 0 16px">{{ .Title }}</h1>
+  <p style="font-size:16px; line-height:1.7; color:var(--body2); max-width:62ch; margin:0">{{ .Params.intro }}</p>
+</section>
+<section style="max-width:1160px; margin:0 auto; padding:56px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--accent); text-transform:uppercase; margin-bottom:20px">{{ partial "bi.html" (dict "en" "Co-chairs" "fr" "Co-porteurs") }}</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px">
+    {{ range $chairs.ByWeight }}
+    <div style="border:1px solid var(--line); border-radius:12px; background:var(--card); padding:32px; display:flex; flex-direction:column; gap:10px">
+      <div style="font-family:var(--font-display); font-size:23px; font-weight:500">{{ .Title }}</div>
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--muted)">{{ .Params.affil }}</div>
+      <div style="font-size:14.5px; line-height:1.65; color:var(--body2); margin:6px 0 0" class="prose-p18">{{ .Content }}</div>
+      <a href="{{ .Params.link }}" style="font-size:13px; margin-top:auto; align-self:flex-start">{{ partial "bi.html" (dict "en" "Personal page ↗" "fr" "Page personnelle ↗") }}</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+<section style="max-width:1160px; margin:0 auto; padding:56px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:8px">{{ partial "bi.html" (dict "en" "Members" "fr" "Membres") }}</div>
+  <div style="display:flex; flex-direction:column">
+    {{ range $members.ByWeight }}
+    <div data-rgrid style="display:grid; grid-template-columns:minmax(160px,3fr) minmax(180px,4fr) minmax(200px,5fr) auto; gap:20px; align-items:baseline; padding:20px 0; border-bottom:1px solid var(--line)">
+      <div style="font-family:var(--font-display); font-size:18px; font-weight:500">{{ .Title }}</div>
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--muted)">{{ .Params.role }}</div>
+      <div style="font-size:13.5px; color:var(--body2)">{{ .Params.skills }}</div>
+      <a href="{{ .Params.link }}" style="font-size:12.5px; white-space:nowrap">↗</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+<section style="max-width:1160px; margin:0 auto; padding:56px 32px 0">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px">
+    <div>
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:16px">{{ partial "bi.html" (dict "en" "National collaborations" "fr" "Collaborations nationales") }}</div>
+      <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:14px; font-size:14.5px; line-height:1.6; color:var(--body2)">
+        {{ range .Params.collab_national }}<li><strong style="font-weight:500">{{ .who | safeHTML }}</strong> — {{ .body }}</li>{{ end }}
+      </ul>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:16px">{{ partial "bi.html" (dict "en" "International collaborations" "fr" "Collaborations internationales") }}</div>
+      <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:14px; font-size:14.5px; line-height:1.6; color:var(--body2)">
+        {{ range .Params.collab_international }}<li><strong style="font-weight:500">{{ .who | safeHTML }}</strong> — {{ .body }}</li>{{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
+<section style="max-width:1160px; margin:0 auto; padding:56px 32px 0">
+  <div style="border:1px dashed var(--line2); border-radius:12px; padding:28px 32px; display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap">
+    <span style="font-size:14.5px; color:var(--muted)">{{ .Params.note }}</span>
+    <a href="{{ "positions/" | relLangURL }}" style="font-size:14px; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; white-space:nowrap">{{ partial "bi.html" (dict "en" "Open positions →" "fr" "Postes ouverts →") }}</a>
+  </div>
+</section>
+{{ end }}

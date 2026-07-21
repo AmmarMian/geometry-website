@@ -1,0 +1,60 @@
+# ---- Work packages ----
+intro_en: "The chair is organised as a pipeline: new geometric <em>features</em> to represent multivariate time series (WP1), new geometric <em>learning models</em> to classify and fuse them (WP2), and new geometric <em>generative models</em> to denoise, interpolate and predict (WP3). Everything is evaluated on real, public remote-sensing datasets, and released as an open toolbox. Frugality is measured, not assumed \u2014 energy consumption is tracked with tools such as CodeCarbon."
+intro_fr: "La chaire s'organise comme une cha\u00eene de traitement : de nouveaux <em>descripteurs</em> g\u00e9om\u00e9triques pour repr\u00e9senter les s\u00e9ries temporelles multivari\u00e9es (WP1), de nouveaux <em>mod\u00e8les d'apprentissage</em> g\u00e9om\u00e9triques pour les classer et les fusionner (WP2), et de nouveaux <em>mod\u00e8les g\u00e9n\u00e9ratifs</em> g\u00e9om\u00e9triques pour d\u00e9bruiter, interpoler et pr\u00e9dire (WP3). Tout est \u00e9valu\u00e9 sur des jeux de donn\u00e9es r\u00e9els et publics de t\u00e9l\u00e9d\u00e9tection, et diffus\u00e9 sous forme de bo\u00eete \u00e0 outils ouverte. La frugalit\u00e9 se mesure, elle ne se d\u00e9cr\u00e8te pas \u2014 la consommation d'\u00e9nergie est suivie avec des outils comme CodeCarbon."
+
+# List / overview rows (also feed the home-page cards)
+list:
+  - id: wp1
+    num: "WP 1"
+    members: "N. Le Bihan \u00b7 A. Mian \u00b7 P.-O. Amblard \u00b7 G. Ginolhac"
+    title_en: "Geometric invariant features for InSAR &amp; PolInSAR"
+    title_fr: "Descripteurs g\u00e9om\u00e9triques invariants pour l'InSAR et le PolInSAR"
+    desc_en: "Geometric phases \u2014 gauge- and reparametrization-invariant by construction \u2014 as low-dimensional signatures of ground displacement, from glacial flow to urban subsidence. A hierarchy of nested phases on Stiefel manifolds, with metrics and barycenters to make them usable in classification."
+    desc_fr: "Les phases g\u00e9om\u00e9triques \u2014 invariantes de jauge et de reparam\u00e9trisation par construction \u2014 comme signatures de basse dimension des d\u00e9placements du sol, de l'\u00e9coulement glaciaire \u00e0 la subsidence urbaine. Une hi\u00e9rarchie de phases embo\u00eet\u00e9es sur des vari\u00e9t\u00e9s de Stiefel, avec m\u00e9triques et barycentres pour la classification."
+    card_en: "Geometric phases as low-dimensional, gauge-invariant signatures of ground displacement \u2014 glaciers, volcanoes, subsidence."
+    card_fr: "Les phases g\u00e9om\u00e9triques comme signatures invariantes de jauge et de basse dimension des d\u00e9placements du sol \u2014 glaciers, volcans, subsidence."
+    eqn: "\u03c6 = arg det(X\u2020Y)"
+    variant: geodesic
+    pattern: ""
+    side: left
+  - id: wp2
+    num: "WP 2"
+    members: "F. Chatelain \u00b7 G. Ginolhac \u00b7 N. Le Bihan \u00b7 A. Mian"
+    title_en: "New geometric machine learning models"
+    title_fr: "Nouveaux mod\u00e8les d'apprentissage g\u00e9om\u00e9triques"
+    desc_en: "Two extensions of the SPDNet architecture: a Transformer SPDNet with positional encoding, attention and normalization redesigned for covariance matrices, and a Federated SPDNet that learns across clients and modalities without centralising the data."
+    desc_fr: "Deux extensions de l'architecture SPDNet : un Transformer SPDNet dont l'encodage positionnel, l'attention et la normalisation sont repens\u00e9s pour les matrices de covariance, et un SPDNet f\u00e9d\u00e9r\u00e9 qui apprend entre clients et modalit\u00e9s sans centraliser les donn\u00e9es."
+    card_en: "Extending SPDNet to transformer architectures for the temporal dimension, and to federated learning for multimodal data."
+    card_fr: "\u00c9tendre SPDNet aux architectures transformer pour la dimension temporelle, et \u00e0 l'apprentissage f\u00e9d\u00e9r\u00e9 pour les donn\u00e9es multimodales."
+    eqn: "d(\u03a3\u1d62, \u03a3\u2c7c) = \u2016log \u03a3\u1d62 \u2212 log \u03a3\u2c7c\u2016"
+    variant: torus
+    pattern: shear
+    side: right
+  - id: wp3
+    num: "WP 3"
+    members: "G. Ginolhac \u00b7 Y. Mhiri \u00b7 N. Le Bihan \u00b7 F. Chatelain"
+    title_en: "Flow matching on manifolds"
+    title_fr: "Flow matching sur les vari\u00e9t\u00e9s"
+    desc_en: "Riemannian flow-matching models on the torus, SPD, Stiefel and Grassmann manifolds \u2014 applied to realistic data generation, SAR/InSAR denoising, and the interpolation or prediction of images between acquisition dates."
+    desc_fr: "Des mod\u00e8les de flow matching riemanniens sur le tore et les vari\u00e9t\u00e9s SPD, de Stiefel et de Grassmann \u2014 appliqu\u00e9s \u00e0 la g\u00e9n\u00e9ration de donn\u00e9es r\u00e9alistes, au d\u00e9bruitage SAR/InSAR, et \u00e0 l'interpolation ou la pr\u00e9diction d'images entre deux dates d'acquisition."
+    card_en: "Riemannian generative models for denoising SAR imagery, and interpolating or predicting images between acquisition dates."
+    card_fr: "Des mod\u00e8les g\u00e9n\u00e9ratifs riemanniens pour d\u00e9bruiter l'imagerie SAR, interpoler ou pr\u00e9dire des images entre deux dates d'acquisition."
+    eqn: "\u1e8b = v\u03b8(x, t),  x \u2208 \u2133"
+    variant: swarm
+    pattern: morph
+    side: left
+
+# Overview strip
+strip:
+  - label_en: Datasets
+    label_fr: "Donn\u00e9es"
+    body_en: "Sentinel-1/2, TerraSAR-X, UAVSAR \u2014 InSAR series over Mexico City and volcanoes, via existing collaborations incl. ONERA."
+    body_fr: "Sentinel-1/2, TerraSAR-X, UAVSAR \u2014 s\u00e9ries InSAR sur Mexico et des volcans, via des collaborations existantes dont l'ONERA."
+  - label_en: Toolbox
+    label_fr: "Bo\u00eete \u00e0 outils"
+    body_en: "All algorithms released as an open-source toolbox for the community."
+    body_fr: "Tous les algorithmes diffus\u00e9s dans une bo\u00eete \u00e0 outils open source pour la communaut\u00e9."
+  - label_en: "Beyond remote sensing"
+    label_fr: "Au-del\u00e0 de la t\u00e9l\u00e9d\u00e9tection"
+    body_en: "Seismic and sonar data with industrial partners G\u00e9olithe and Exail; EEG with the DataIA institute."
+    body_fr: "Donn\u00e9es sismiques et sonar avec les partenaires industriels G\u00e9olithe et Exail ; EEG avec l'institut DataIA."

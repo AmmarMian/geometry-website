@@ -1,0 +1,61 @@
+# ---- Global site content (edit freely) ----
+name: GEOMETRY
+acronym: GeomEtry fOr MultivariatE Times seRies analYsis
+badge: CHAIRE MIAI
+tagline_en: "MIAI Cluster Chair \u00b7 2026 \u2014 2029"
+tagline_fr: "Chaire cluster MIAI \u00b7 2026 \u2014 2029"
+
+# Internal-area password (prototype gate, client-side only).
+# Stored as a SHA-256 hex hash so the plaintext password never sits in the repo
+# or in the page source. To change it: pick a new password, then run
+#   printf '%s' 'yourpassword' | shasum -a 256
+# and paste the resulting hex string below.
+password_hash: 5e5e71dbaf5f3e9c28d4192bb31158a9b5d9c65fa936404b8c955395dff6a6dd
+
+footer:
+  labs_en: "Gipsa-lab (UGA, CNRS) \u00b7 LISTIC (USMB)"
+  labs_fr: "Gipsa-lab (UGA, CNRS) \u00b7 LISTIC (USMB)"
+
+# ---- Look (baked into CSS at build time) ----
+look:
+  accent: "#4a6741"                                   # any hex; used for links, badges, 3D accent
+  font_display: "'Space Grotesk', 'IBM Plex Sans', sans-serif"
+
+# ---- Landing-page 3D hero (see README for options) ----
+# variant: torus | flow (sphere) — the only two exposed on the landing page.
+# On load a random one is picked; visitors can switch via a small marker bottom-left of the hero.
+hero:
+  variant: torus        # torus | flow
+  motion: scroll        # scroll | orbit | drift | still
+  surface: grid         # grid | none | glass
+  zoom: 0.88
+  speed: 0.4
+  density: 0.4
+  trail: 55
+  thickness: 4
+
+# ---- Navigation (order = display order) ----
+nav:
+  - {key: home,      url: "",              en: Home,         fr: Accueil}
+  - {key: wp,        url: "workpackages/", en: Research,     fr: Recherche}
+  - {key: team,      url: "team/",         en: Team,         fr: "\u00c9quipe"}
+  - {key: pubs,      url: "publications/", en: Publications, fr: Publications}
+  - {key: news,      url: "news/",         en: News,         fr: "Actualit\u00e9s"}
+  - {key: positions, url: "positions/",    en: Positions,    fr: Recrutement}
+  - {key: internal,  url: "internal/",     en: Internal,     fr: Interne}
+
+# Home-page copy (hero title/lead, "why geometry" text, keywords) now lives in
+# content/_index.en.md / content/_index.fr.md \u2014 edit it there.
+
+partners:
+  - {name: MIAI Cluster, logo: logos/miai-cluster.svg}
+  - {name: "Universit\u00e9 Grenoble Alpes", logo: logos/uga.svg}
+  - {name: "Universit\u00e9 Savoie Mont Blanc", logo: logos/usmb.svg}
+  - {name: CNRS, logo: logos/cnrs.svg}
+  - {name: Gipsa-lab, logo: logos/gipsa-lab.jpg}
+  - {name: LISTIC, logo: logos/listic.png}
+collabs:
+  - "DataIA \u00b7 Univ. Paris-Saclay"
+  - "G\u00e9olithe"
+  - Exail
+  - ONERA

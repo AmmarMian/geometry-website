@@ -1,0 +1,40 @@
+{{ define "main" }}
+{{ $s := .Site.Data.site }}
+<div data-internal data-password-hash="{{ $s.password_hash }}">
+  <section data-internal-lock style="max-width:420px; margin:0 auto; padding:110px 32px 140px">
+    <div style="border:1px solid var(--line); border-radius:12px; background:var(--card); padding:40px">
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:12px">{{ partial "bi.html" (dict "en" "Members only" "fr" "Réservé aux membres") }}</div>
+      <h1 style="font-family:var(--font-display); font-weight:500; font-size:26px; margin:0 0 20px">{{ partial "bi.html" (dict "en" "Internal area" "fr" "Espace interne") }}</h1>
+      <form data-internal-form style="display:flex; flex-direction:column; gap:12px">
+        <input type="password" data-internal-pw placeholder="Password / Mot de passe" style="font-family:var(--font-mono); font-size:14px; padding:11px 14px; border:1px solid var(--line2); background:var(--paper); color:var(--ink); outline:none; border-radius:10px">
+        <button type="submit" style="font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:500; padding:11px; background:var(--ink); color:var(--paper); border:none; border-radius:999px; cursor:pointer">{{ partial "bi.html" (dict "en" "Enter" "fr" "Entrer") }}</button>
+        <div data-internal-error style="display:none; font-size:12.5px; color:var(--accent)">{{ partial "bi.html" (dict "en" "Incorrect password." "fr" "Mot de passe incorrect.") }}</div>
+      </form>
+      <div style="font-size:12px; color:var(--faint); margin-top:18px; line-height:1.6">{{ partial "bi.html" (dict "en" "Prototype gate — ask the co-chairs for the password." "fr" "Accès prototype — demandez le mot de passe aux co-porteurs.") }}</div>
+    </div>
+  </section>
+  <div data-internal-content style="display:none">
+    <section style="max-width:1160px; margin:0 auto; padding:72px 32px 0">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap; margin-bottom:8px">
+        <div>
+          <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:14px">{{ partial "bi.html" (dict "en" "Members only" "fr" "Réservé aux membres") }}</div>
+          <h1 style="font-family:var(--font-display); font-weight:500; font-size:clamp(30px,3.6vw,44px); margin:0">{{ partial "bi.html" (dict "en" "Internal area" "fr" "Espace interne") }}</h1>
+        </div>
+        <button data-internal-logout style="font-family:var(--font-mono); font-size:12px; background:none; border:1px solid var(--line2); border-radius:999px; color:var(--muted); padding:8px 14px; cursor:pointer">{{ partial "bi.html" (dict "en" "Log out" "fr" "Déconnexion") }}</button>
+      </div>
+    </section>
+    <section style="max-width:1160px; margin:0 auto; padding:40px 32px 0">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px">
+        {{ range .Params.areas }}
+        <a href="{{ .url_b64 | base64Decode }}" style="text-decoration:none; color:inherit; border:1px solid var(--line); border-radius:12px; background:var(--card); padding:26px; display:flex; flex-direction:column; gap:8px">
+          <span style="font-family:var(--font-mono); font-size:13px; color:var(--accent)">{{ .glyph }}</span>
+          <span style="font-family:var(--font-display); font-size:19px; font-weight:500">{{ .title | safeHTML }}</span>
+          <span style="font-size:13.5px; line-height:1.6; color:var(--muted)">{{ .desc }}</span>
+        </a>
+        {{ end }}
+      </div>
+      <p style="font-size:13px; color:var(--faint); margin-top:28px">{{ .Params.note }}</p>
+    </section>
+  </div>
+</div>
+{{ end }}

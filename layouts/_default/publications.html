@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section style="max-width:860px; margin:0 auto; padding:72px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:14px">{{ partial "bi.html" (dict "en" "Output" "fr" "Production") }}</div>
+  <h1 style="font-family:var(--font-display); font-weight:500; font-size:clamp(30px,3.6vw,44px); margin:0 0 16px">{{ .Title }}</h1>
+  <p style="font-size:16px; line-height:1.7; color:var(--body2); max-width:62ch; margin:0">{{ .Params.intro }}</p>
+</section>
+{{ if .Pages }}
+<section style="max-width:860px; margin:0 auto; padding:48px 32px 0; display:flex; flex-direction:column">
+  {{ range .Pages }}
+  <div style="padding:22px 0; border-top:1px solid var(--line)">
+    <div style="font-family:var(--font-display); font-size:17px; font-weight:500">{{ .Title }}</div>
+    <div style="font-size:14px; line-height:1.6; color:var(--body2); margin-top:6px" class="prose-p18">{{ .Content }}</div>
+  </div>
+  {{ end }}
+</section>
+{{ else }}
+<section style="max-width:860px; margin:0 auto; padding:48px 32px 0">
+  <div style="border:1px dashed var(--line2); border-radius:12px; padding:40px; text-align:center">
+    <div style="font-family:var(--font-mono); font-size:13px; color:var(--faint)">∅</div>
+    <div style="font-size:14.5px; color:var(--muted); margin-top:10px">{{ .Params.empty }}</div>
+  </div>
+</section>
+{{ end }}
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0">
+  <div style="font-size:13px; color:var(--faint)">{{ .Params.note }}</div>
+</section>
+{{ end }}

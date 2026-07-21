@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{ $s := .Site.Data.site }}{{ $hero := $s.hero }}
+<geo-hero variant="{{ $hero.variant }}" data-motion="{{ $hero.motion }}" speed="{{ $hero.speed }}" density="{{ $hero.density }}" trail="{{ $hero.trail }}" thickness="{{ $hero.thickness }}" zoom="{{ $hero.zoom }}" surface="{{ $hero.surface }}" annotations="false" autorotate="false" drag="true" data-hero-fixed="1" style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0; pointer-events:auto"></geo-hero>
+
+<section style="position:relative; z-index:1; height:88vh; min-height:540px">
+  <div style="position:relative; max-width:1160px; margin:0 auto; padding:0 32px 60px; height:100%; display:flex; flex-direction:column; justify-content:flex-end; pointer-events:none">
+    <div data-hr style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; margin-bottom:16px">{{ partial "bi.html" (dict "en" $s.tagline_en "fr" $s.tagline_fr) }}</div>
+    <div data-hr data-hero-picker style="display:flex; align-items:center; gap:14px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; opacity:0.34; transition:opacity 0.4s; margin-bottom:16px; pointer-events:auto" title="pick a visualization">
+      <span style="width:6px; height:6px; border-radius:50%; background:var(--muted); display:inline-block"></span>
+      <div style="display:flex; gap:14px">
+        <button data-hero-pick="torus" style="background:none; border:none; padding:2px 0; cursor:pointer; font:inherit; letter-spacing:inherit; color:var(--muted); border-bottom:1px solid transparent">torus</button>
+        <button data-hero-pick="flow" style="background:none; border:none; padding:2px 0; cursor:pointer; font:inherit; letter-spacing:inherit; color:var(--muted); border-bottom:1px solid transparent">sphere</button>
+      </div>
+    </div>
+    <h1 data-hr style="font-family:var(--font-display); font-weight:500; font-size:clamp(34px, 4.6vw, 58px); line-height:1.12; margin:0 0 24px; max-width:17ch; text-wrap:balance">{{ .Params.hero_title }}</h1>
+    <div data-hr style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:28px; pointer-events:auto"> 
+      {{ range $s.partners }}
+      {{ if .logo }}
+      <span title="{{ .name }}" style="background:#fff; border-radius:8px; padding:10px 18px; display:flex; align-items:center; height:40px">
+        <img src="{{ .logo | relURL }}" alt="{{ .name }}" style="height:100%; max-width:160px; width:auto; object-fit:contain; display:block">
+      </span>
+      {{ end }}
+      {{ end }}
+    </div>
+    <p data-hr style="font-size:17px; line-height:1.6; color:var(--body2); max-width:56ch; margin:0 0 28px">{{ .Params.hero_lead }}</p>
+    <div data-hr style="display:flex; gap:28px; align-items:center; pointer-events:auto">
+      <a href="{{ "workpackages/" | relLangURL }}" style="font-size:14.5px; font-weight:500; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px">{{ partial "bi.html" (dict "en" "Explore the research →" "fr" "Découvrir la recherche →") }}</a>
+      <a href="{{ "positions/" | relLangURL }}" style="font-size:14.5px; font-weight:500; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; color:var(--accent)">{{ partial "bi.html" (dict "en" "Open positions →" "fr" "Postes ouverts →") }}</a>
+    </div>
+  </div>
+</section>
+
+<section data-sr data-hero-shrink style="position:relative; z-index:1; max-width:1160px; margin:0 auto; padding:88px 32px 0">
+  <div data-rgrid style="display:grid; grid-template-columns:minmax(200px, 5fr) minmax(300px, 8fr); gap:48px">
+    <div>
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:14px">01</div>
+      <h2 style="font-family:var(--font-display); font-weight:500; font-size:30px; line-height:1.25; margin:0">{{ .Params.why_title }}</h2>
+      <div style="font-family:var(--font-mono); font-size:13px; color:var(--faint); margin-top:22px; line-height:2">Σ ∈ SPD(p)<br>U ∈ St(p, k)<br>θ ∈ 𝕋ⁿ</div>
+    </div>
+    <div style="font-size:16px; line-height:1.75; color:var(--body)" class="prose-p18">
+      {{ .Content }}
+      <p style="margin:0 0 24px; font-size:14.5px; color:var(--muted)">{{ .Params.why_note }}</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        {{ range .Params.keywords }}<span style="font-family:var(--font-mono); font-size:11.5px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:5px 10px">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-sr style="position:relative; z-index:1; max-width:1160px; margin:0 auto; padding:88px 32px 0">
+  <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:32px; flex-wrap:wrap">
+    <h2 style="font-family:var(--font-display); font-weight:500; font-size:30px; margin:0">{{ partial "bi.html" (dict "en" "Three work packages" "fr" "Trois axes de recherche") }}</h2>
+    <a href="{{ "workpackages/" | relLangURL }}" style="font-size:14px; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px">{{ partial "bi.html" (dict "en" "Overview →" "fr" "Vue d\u0027ensemble →") }}</a>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px">
+    {{ range (.Site.GetPage "workpackages").Pages }}
+    <a href="{{ .RelPermalink }}" style="text-decoration:none; color:inherit; border:1px solid var(--line); border-radius:12px; background:var(--card); padding:28px; display:flex; flex-direction:column; gap:12px; transition:border-color 0.2s">
+      <span style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--accent)">{{ .Params.num }}</span>
+      <span style="font-family:var(--font-display); font-size:21px; font-weight:500; line-height:1.3">{{ .Title }}</span>
+      <span style="font-size:14px; line-height:1.6; color:var(--muted)">{{ .Params.card }}</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section data-sr style="position:relative; z-index:1; max-width:1160px; margin:0 auto; padding:88px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:20px">{{ partial "bi.html" (dict "en" "In collaboration with" "fr" "En collaboration avec") }}</div>
+  <div style="display:flex; gap:12px; flex-wrap:wrap">
+    {{ range $s.collabs }}<span style="border:1px dashed var(--line2); border-radius:10px; color:var(--muted); font-size:13px; padding:14px 22px; display:flex; align-items:center">{{ . }}</span>{{ end }}
+  </div>
+</section>
+{{ end }}

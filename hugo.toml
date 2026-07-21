@@ -1,0 +1,33 @@
+# ============================================================
+#  GEOMETRY — Hugo site configuration
+#  Editorial content (news, positions, team, work packages...) lives in
+#  content/*.md — one markdown file per language per item. Site-wide
+#  config (nav, footer, hero, partner logos, look) stays in data/site.yaml.
+# ============================================================
+baseURL = "/"
+title = "GEOMETRY"
+enableEmoji = false
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
+
+[markup.goldmark.renderer]
+  unsafe = true   # allow the little <em>/<a>/<strong> we keep inside content
+
+[markup.goldmark.parser]
+  autoHeadingID = true
+
+[outputs]
+  home = ["HTML"]
+
+[languages]
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    weight = 1
+  [languages.fr]
+    languageCode = "fr"
+    languageName = "Français"
+    weight = 2

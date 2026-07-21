@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section style="max-width:860px; margin:0 auto; padding:72px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--accent); text-transform:uppercase; margin-bottom:14px">{{ .Params.eyebrow }}</div>
+  <h1 style="font-family:var(--font-display); font-weight:500; font-size:clamp(30px,3.6vw,44px); margin:0 0 16px">{{ .Title }}</h1>
+  <p style="font-size:16px; line-height:1.7; color:var(--body2); max-width:62ch; margin:0">{{ .Params.lead }}</p>
+</section>
+<section style="max-width:860px; margin:0 auto; padding:48px 32px 0; display:flex; flex-direction:column; gap:20px">
+  {{ range .Pages }}
+  <div style="border:1px solid var(--line); border-radius:12px; background:var(--card); padding:36px">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:12px">
+      <span style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--accent); text-transform:uppercase">{{ .Params.role_kind }}</span>
+      <span style="font-family:var(--font-mono); font-size:12px; color:var(--muted)">{{ .Params.dates }}</span>
+    </div>
+    <div style="font-family:var(--font-display); font-size:23px; font-weight:500; margin-bottom:10px">{{ .Title }}</div>
+    <div style="font-size:14.5px; line-height:1.7; color:var(--body2); margin:0 0 18px" class="prose-p18">{{ .Content }}</div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px">
+      <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:5px 10px">{{ .Params.tag }}</span>
+      <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:5px 10px">{{ .Params.loc }}</span>
+    </div>
+    <a href="{{ "team/" | relLangURL }}" style="font-size:14px; font-weight:500; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px">{{ partial "bi.html" (dict "en" "Apply — contact the co-chairs →" "fr" "Candidater — contacter les co-porteurs →") }}</a>
+  </div>
+  {{ end }}
+</section>
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0">
+  <div style="border:1px dashed var(--line2); border-radius:12px; padding:24px 28px; font-size:13.5px; line-height:1.65; color:var(--muted)">{{ .Params.note }}</div>
+</section>
+{{ end }}

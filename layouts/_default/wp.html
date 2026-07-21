@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<section style="max-width:1160px; margin:0 auto; padding:52px 32px 0">
+  <a href="{{ "workpackages/" | relLangURL }}" style="font-size:12.5px; color:var(--faint); text-decoration:none">{{ partial "bi.html" (dict "en" "← All work packages" "fr" "← Tous les axes") }}</a>
+</section>
+
+<section data-wpgrid style="max-width:1160px; margin:0 auto; padding:24px 32px 110px; display:grid; grid-template-columns:minmax(200px,240px) 1fr; gap:64px; align-items:start">
+  <aside style="position:sticky; top:88px; display:flex; flex-direction:column; gap:26px">
+    <div>
+      <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; color:var(--accent); text-transform:uppercase">{{ .Params.num }}</div>
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--faint); margin-top:4px">{{ .Weight }} / {{ len .CurrentSection.Pages }}</div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.12em; color:var(--faint); text-transform:uppercase; margin-bottom:8px">{{ partial "bi.html" (dict "en" "Team" "fr" "Équipe") }}</div>
+      <div style="font-size:13px; line-height:1.7; color:var(--body2)">{{ .Params.members }}</div>
+    </div>
+    {{ if .TableOfContents }}
+    <div class="wp-toc" style="border-top:1px solid var(--line); padding-top:18px">
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+  </aside>
+
+  <div>
+    <h1 style="font-family:var(--font-display); font-weight:500; font-size:clamp(28px,3.6vw,42px); line-height:1.18; margin:0 0 40px; max-width:26ch">{{ .Title }}</h1>
+
+    <div class="wp-body">{{ .Content }}</div>
+
+    <div style="display:flex; justify-content:space-between; margin-top:56px; padding-top:24px; border-top:1px solid var(--line); gap:16px; flex-wrap:wrap">
+      {{/* Hugo's Pages are ordered ascending by weight here; NextInSection/PrevInSection walk
+           that array in the "blog" direction (Next = lower index), which is the reverse of
+           weight order — so the arrows below are intentionally swapped to read left→right. */}}
+      {{ with .NextInSection }}<a href="{{ .RelPermalink }}" style="font-size:14px; text-decoration:none; color:var(--body2)">← {{ .Params.num }} · {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+      {{ with .PrevInSection }}<a href="{{ .RelPermalink }}" style="font-size:14px; text-decoration:none; color:var(--body2)">{{ .Params.num }} · {{ .Title }} →</a>{{ else }}<span></span>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

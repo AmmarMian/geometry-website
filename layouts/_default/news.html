@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section style="max-width:860px; margin:0 auto; padding:72px 32px 0">
+  <div style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-bottom:14px">{{ partial "bi.html" (dict "en" "Life of the chair" "fr" "Vie de la chaire") }}</div>
+  <h1 style="font-family:var(--font-display); font-weight:500; font-size:clamp(30px,3.6vw,44px); margin:0 0 16px">{{ .Title }}</h1>
+</section>
+<section style="max-width:860px; margin:0 auto; padding:32px 32px 0; display:flex; flex-direction:column">
+  {{ range .Pages.ByDate.Reverse }}
+  <div style="display:grid; grid-template-columns:130px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--line)">
+    <div style="font-family:var(--font-mono); font-size:12.5px; color:var(--accent); padding-top:3px">{{ .Params.date_label }}</div>
+    <div style="display:flex; flex-direction:column; gap:6px">
+      <div style="font-family:var(--font-display); font-size:19px; font-weight:500">{{ .Title }}</div>
+      <div style="font-size:14.5px; line-height:1.65; color:var(--body2)" class="prose-p18">{{ .Content }}</div>
+    </div>
+  </div>
+  {{ end }}
+</section>
+<section style="max-width:860px; margin:0 auto; padding:48px 32px 0">
+  <div style="border:1px dashed var(--line2); border-radius:12px; padding:24px 28px; font-size:13.5px; color:var(--muted)">{{ .Params.footer }}</div>
+</section>
+{{ end }}

@@ -1,0 +1,55 @@
+# ---- Team page ----
+intro_en: "Two laboratories, six researchers \u2014 experts in Riemannian and differential geometry, machine learning, statistical signal processing and remote sensing."
+intro_fr: "Deux laboratoires, six chercheurs \u2014 experts en g\u00e9om\u00e9trie riemannienne et diff\u00e9rentielle, apprentissage automatique, traitement statistique du signal et t\u00e9l\u00e9d\u00e9tection."
+
+chairs:
+  - name: Nicolas Le Bihan
+    affil_en: "Directeur de Recherche CNRS \u00b7 GAIA, Gipsa-lab UMR 5216, UGA"
+    affil_fr: "Directeur de recherche CNRS \u00b7 GAIA, Gipsa-lab UMR 5216, UGA"
+    bio_en: "Geometric processing of multivariate signals, with emphasis on bivariate signal analysis and polarization-aware algorithm design. Principal investigator of the ANR RICOCHET project (2022\u20132026)."
+    bio_fr: "Traitement g\u00e9om\u00e9trique des signaux multivari\u00e9s, avec un accent sur l'analyse des signaux bivari\u00e9s et la conception d'algorithmes sensibles \u00e0 la polarisation. Porteur du projet ANR RICOCHET (2022\u20132026)."
+    url: "#"
+  - name: Guillaume Ginolhac
+    affil_en: "Professor \u00b7 LISTIC, Universit\u00e9 Savoie Mont Blanc"
+    affil_fr: "Professeur \u00b7 LISTIC, Universit\u00e9 Savoie Mont Blanc"
+    bio_en: "Statistical learning based on Riemannian geometry and robust statistics, applied to remote sensing \u2014 SAR imagery and time series in particular. Principal investigator of the ANR ASTRID MARGARITA project (2018\u20132022)."
+    bio_fr: "Apprentissage statistique fond\u00e9 sur la g\u00e9om\u00e9trie riemannienne et les statistiques robustes, appliqu\u00e9 \u00e0 la t\u00e9l\u00e9d\u00e9tection \u2014 imagerie SAR et s\u00e9ries temporelles en particulier. Porteur du projet ANR ASTRID MARGARITA (2018\u20132022)."
+    url: "#"
+
+members:
+  - name: Ammar Mian
+    role: "MCF \u00b7 LISTIC, USMB"
+    skills_en: "Riemannian geometry, machine learning, remote sensing"
+    skills_fr: "G\u00e9om\u00e9trie riemannienne, apprentissage automatique, t\u00e9l\u00e9d\u00e9tection"
+    url: "#"
+  - name: Florent Chatelain
+    role: "MCF \u00b7 Gipsa-lab, UGA / Grenoble INP"
+    skills_en: "High-dimensional statistics, machine learning"
+    skills_fr: "Statistiques en grande dimension, apprentissage automatique"
+    url: "#"
+  - name: Yassine Mhiri
+    role: "MCF \u00b7 LISTIC, USMB"
+    skills_en: "Robust statistics, machine learning"
+    skills_fr: "Statistiques robustes, apprentissage automatique"
+    url: "#"
+  - name: Pierre-Olivier Amblard
+    role: "DR CNRS \u00b7 Gipsa-lab, UGA"
+    skills_en: "Statistical signal processing, differential geometry"
+    skills_fr: "Traitement statistique du signal, g\u00e9om\u00e9trie diff\u00e9rentielle"
+    url: "#"
+
+collab_national:
+  - who: "Florent Bouchard &amp; Fr\u00e9d\u00e9ric Pascal"
+    en: "DataIA, Univ. Paris-Saclay. Riemannian geometry, robust statistics; joint work on WP2 and WP3, pooling resources with the DataIA chair \u201cPre-trained Models for Health Data\u201d."
+    fr: "DataIA, Univ. Paris-Saclay. G\u00e9om\u00e9trie riemannienne, statistiques robustes ; travaux communs sur les WP2 et WP3, en mutualisant les moyens avec la chaire DataIA \u00ab Pre-trained Models for Health Data \u00bb."
+  - who: Julien Flamant
+    en: "multivariate signal processing; collaboration focused on WP1."
+    fr: "traitement du signal multivari\u00e9 ; collaboration centr\u00e9e sur le WP1."
+
+collab_international:
+  - who: Esa Ollila
+    en: "Aalto University, Finland. Robust multivariate statistics and optimisation; mainly WP2."
+    fr: "Universit\u00e9 Aalto, Finlande. Statistiques multivari\u00e9es robustes et optimisation ; principalement WP2."
+
+note_en: "Two PhD students and one postdoc will join the team \u2014 the first positions open in October 2026."
+note_fr: "Deux doctorants et un post-doctorant rejoindront l'\u00e9quipe \u2014 les premiers postes ouvrent en octobre 2026."

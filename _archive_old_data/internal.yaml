@@ -1,0 +1,10 @@
+# ---- Internal area (cards link to your shared resources) ----
+areas:
+  - {glyph: "\u00a7 01", title_en: Meeting notes,       title_fr: "Comptes rendus",        desc_en: "Minutes of pilot and project meetings.",             desc_fr: "Comptes rendus des r\u00e9unions de pilotage et de projet.", url: "#"}
+  - {glyph: "\u00a7 02", title_en: Datasets,            title_fr: "Donn\u00e9es",              desc_en: "InSAR / PolInSAR series, access notes and preprocessing scripts.", desc_fr: "S\u00e9ries InSAR / PolInSAR, notes d'acc\u00e8s et scripts de pr\u00e9traitement.", url: "#"}
+  - {glyph: "\u00a7 03", title_en: Paper drafts,        title_fr: "Brouillons d'articles",  desc_en: "Work in progress, Overleaf links.",                  desc_fr: "Travaux en cours, liens Overleaf.", url: "#"}
+  - {glyph: "\u00a7 04", title_en: "Deliverables &amp; reports", title_fr: "Livrables et rapports", desc_en: "Reports to the MIAI Cluster, budget follow-up.",     desc_fr: "Rapports au cluster MIAI, suivi budg\u00e9taire.", url: "#"}
+  - {glyph: "\u00a7 05", title_en: Code repositories,   title_fr: "D\u00e9p\u00f4ts de code",    desc_en: "Toolbox development, experiments, CodeCarbon logs.", desc_fr: "D\u00e9veloppement de la bo\u00eete \u00e0 outils, exp\u00e9riences, journaux CodeCarbon.", url: "#"}
+  - {glyph: "\u00a7 06", title_en: Recruitment,         title_fr: "Recrutement",           desc_en: "Applications, interview notes, onboarding.",          desc_fr: "Candidatures, notes d'entretien, int\u00e9gration.", url: "#"}
+note_en: "These cards are placeholders \u2014 point them to your cloud drive, wiki, git forge or meeting tool. Note: this password screen is a design prototype (client-side only); real protection requires server-side auth on your hosting."
+note_fr: "Ces cartes sont des liens fictifs \u2014 pointez-les vers votre cloud, wiki, forge git ou outil de r\u00e9union. Attention : cet \u00e9cran de mot de passe est un prototype (c\u00f4t\u00e9 client uniquement) ; une vraie protection exige une authentification c\u00f4t\u00e9 serveur."

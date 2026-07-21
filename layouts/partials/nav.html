@@ -1,0 +1,31 @@
+{{ $active := .Page.Params.nav }}
+{{ $page := . }}
+{{ $langs := slice "en" "fr" }}
+<div style="border-bottom:1px solid var(--line); background:var(--nav-bg); backdrop-filter:blur(8px); position:sticky; top:0; z-index:50">
+  <div style="max-width:1160px; margin:0 auto; padding:0 32px; min-height:62px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap">
+    <a href="{{ "" | relLangURL }}" style="text-decoration:none; color:var(--ink); display:flex; align-items:baseline; gap:10px; padding:14px 0">
+      <span style="font-family:var(--font-display); font-size:20px; font-weight:600; letter-spacing:0.04em">{{ .Site.Data.site.name }}</span>
+      <span style="font-family:var(--font-mono); font-size:10.5px; color:#8a8477; letter-spacing:0.08em">{{ .Site.Data.site.badge }}</span>
+    </a>
+    <nav style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+      {{ range .Site.Data.site.nav }}
+      <a href="{{ .url | relLangURL }}" style="font-size:13.5px; text-decoration:none; letter-spacing:0.01em; padding:4px 0; {{ if eq .key $active }}color:var(--ink); border-bottom:1px solid var(--ink){{ else }}color:var(--muted); border-bottom:1px solid transparent{{ end }}">{{ partial "bi.html" (dict "en" .en "fr" .fr) }}</a>
+      {{ end }}
+      <span style="width:1px; height:16px; background:var(--line2)"></span>
+      <span style="display:flex; gap:8px; align-items:center; font-family:var(--font-mono); font-size:12px">
+        {{ range $i, $lang := $langs }}
+        {{ if gt $i 0 }}<span style="color:var(--line2)">/</span>{{ end }}
+        {{ $isActive := eq $page.Language.Lang $lang }}
+        {{ $url := $page.RelPermalink }}
+        {{ if not $isActive }}
+          {{ $found := false }}
+          {{ range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $url = .RelPermalink }}{{ $found = true }}{{ end }}{{ end }}
+          {{ if not $found }}{{ range $page.Site.Sites }}{{ if eq .Language.Lang $lang }}{{ $url = .Home.RelPermalink }}{{ end }}{{ end }}{{ end }}
+        {{ end }}
+        <a href="{{ $url }}" style="text-decoration:none; padding:2px; font:inherit; {{ if $isActive }}color:var(--ink); text-decoration:underline{{ else }}color:var(--faint){{ end }}">{{ upper $lang }}</a>
+        {{ end }}
+      </span>
+      <button data-action="theme" title="Light / dark" style="background:none; border:1px solid var(--line2); border-radius:999px; cursor:pointer; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; padding:0">◐</button>
+    </nav>
+  </div>
+</div>

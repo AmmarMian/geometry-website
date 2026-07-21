@@ -1,0 +1,13 @@
+# ---- Open positions ----
+roles:
+  # - kind_en: "PhD \u00b7 3 years"
+  #   kind_fr: "Doctorat \u00b7 3 ans"
+  #   dates_en: "Oct 2026 \u2192 Sep 2029"
+  #   dates_fr: "Oct. 2026 \u2192 Sept. 2029"
+  #   title_en: "Flow matching on manifolds for remote sensing"
+  #   title_fr: "Flow matching sur les vari\u00e9t\u00e9s pour la t\u00e9l\u00e9d\u00e9tection"
+  #   body_en: "Develop Riemannian flow-matching models on the torus, SPD, Stiefel and Grassmann manifolds, applied to SAR/InSAR denoising and to the interpolation and prediction of satellite image time series (WP3)."
+  #   body_fr: "D\u00e9velopper des mod\u00e8les de flow matching riemanniens sur le tore et les vari\u00e9t\u00e9s SPD, de Stiefel et de Grassmann, appliqu\u00e9s au d\u00e9bruitage SAR/InSAR et \u00e0 l'interpolation et la pr\u00e9diction de s\u00e9ries d'images satellitaires (WP3)."
+  #   tag_en: "Profile: applied maths / signal processing / ML"
+  #   tag_fr: "Profil : maths appliqu\u00e9es / signal / ML"
+  #   loc: "LISTIC (Annecy) \u00b7 Gipsa-lab (Grenoble)"

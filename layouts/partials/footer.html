@@ -1,0 +1,10 @@
+{{ $s := .Site.Data.site }}
+<footer style="position:relative; z-index:1; border-top:1px solid var(--line); background:var(--paper); margin-top:96px">
+  <div style="max-width:1160px; margin:0 auto; padding:40px 32px; display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap; align-items:baseline">
+    <div style="display:flex; flex-direction:column; gap:6px">
+      <span style="font-family:var(--font-display); font-size:17px; font-weight:600; letter-spacing:0.04em">{{ $s.name }}</span>
+      <span style="font-family:var(--font-mono); font-size:11px; color:var(--faint)">{{ $s.acronym }}</span>
+    </div>
+    <div style="font-size:13px; color:var(--muted)">{{ partial "bi.html" (dict "en" $s.footer.labs_en "fr" $s.footer.labs_fr) }}</div>
+  </div>
+</footer>
